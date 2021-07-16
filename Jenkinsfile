@@ -6,7 +6,7 @@ pipeline{
        stage("git pull admin.conf"){
            steps{
                git "https://github.com/prabal03/helm-jenkins-file.git"
-               git "https://github.com/prabal03/helm-testing.git" 
+               sh "git clone https://github.com/prabal03/helm-testing.git" 
            }
        }
         stage("building helm"){
