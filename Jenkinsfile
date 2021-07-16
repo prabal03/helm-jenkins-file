@@ -4,13 +4,13 @@ pipeline{
     }
     stages{
        stage("git pull admin.conf"){
-           step{
-               git "https://github.com/prabal03/helm-jenkins-file.git" , branch "master"
-               git "https://github.com/prabal03/helm-testing.git" , branch "master"
+           steps{
+               git "https://github.com/prabal03/helm-jenkins-file.git"
+               git "https://github.com/prabal03/helm-testing.git" 
            }
        }
         stage("building helm"){
-         step{
+         steps{
              sh "wget https://get.helm.sh/helm-v3.6.3-linux-amd64.tar.gz"
              sh "tar -xvzf helm-v3.6.3-linux-amd64.tar.gz"
              sh "mv linux-amd64/helm /usr/bin"
